@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import 'react-notifications/lib/notifications.css';
 import s from './formPhone.module.css';
 import { addContact } from '../../redux/actions';
+import Notiflix from 'notiflix';
 
 // Пропсы передаем в функцию как параметры
 export default function FormPhoneBook() {
@@ -36,7 +37,11 @@ export default function FormPhoneBook() {
       return items.some(item => item.name.toLowerCase() === name.toLowerCase());
     };
     isContactExist(name)
-      ? alert(`${name} is already in contacts.`)
+      ? Notiflix.Report.warning(
+          `Such a ${name} already exists!`,
+          'Please enter another name',
+          'okay',
+        )
       : onSubmit(name, number);
     // очистка вместо ресета
     setName('');
