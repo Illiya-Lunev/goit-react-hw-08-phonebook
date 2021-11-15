@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import 'react-notifications/lib/notifications.css';
 import s from './formPhone.module.css';
-import { addContact } from '../../redux/actions';
+import { addContact } from '../../redux/operations';
+import { getContactsList } from '../../redux/selectors';
+import { v4 as uuidv4 } from 'uuid';
 import Notiflix from 'notiflix';
 
 // Пропсы передаем в функцию как параметры
 export default function FormPhoneBook() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
   const dispatch = useDispatch();
 
-  const items = useSelector(state => state.contacts.items);
+  const items = useSelector(getContactsList);
+  const id = uuidv4();
 
   const onSubmit = () => dispatch(addContact({ name, number }));
 
@@ -40,7 +41,7 @@ export default function FormPhoneBook() {
       ? Notiflix.Report.warning(
           `Such a ${name} already exists!`,
           'Please enter another name',
-          'okay',
+          'Okay',
         )
       : onSubmit(name, number);
     // очистка вместо ресета
