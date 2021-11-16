@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
 import contactsReducer from './reducer';
+import authReducer from './Auth/auth-slice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -23,15 +24,16 @@ const middleware = [
   logger,
 ];
 // Конфигурация локал  сторедж
-const contactsPersistConfig = {
-  key: 'contacts',
+const authPersistConfig = {
+  key: 'auth',
   storage,
-  blacklist: ['filter'],
+  whitelist: ['token'],
 };
 
 const store = configureStore({
   reducer: {
-    contacts: persistReducer(contactsPersistConfig, contactsReducer),
+    auth: persistReducer(authPersistConfig, authReducer),
+    contacts: contactsReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

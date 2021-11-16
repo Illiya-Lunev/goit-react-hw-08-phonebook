@@ -15,7 +15,7 @@ export default function FormPhoneBook() {
   const items = useSelector(getContactsList);
   const id = uuidv4();
 
-  const onSubmit = () => dispatch(addContact({ name, number }));
+  const onSubmit = () => dispatch(addContact({ name, number, id }));
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;

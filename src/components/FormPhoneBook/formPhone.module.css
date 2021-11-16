@@ -2,7 +2,7 @@
   max-width: 400px;
   padding: 40px 50px;
   margin: 50px auto 0;
-  outline: rgb(203, 207, 207) solid 5px;
+  outline: #141e30 solid 5px;
 }
 
 .label {
@@ -23,12 +23,12 @@
   line-height: 40px;
   border-radius: 20px;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  color: rgb(43, 33, 175);
-  background-color: rgb(203, 207, 207);
+  color: #fff;
+  background-color: #141e30;
   cursor: pointer;
 }
 .input:hover {
-  box-shadow: 4px 4px 8px 0px rgb(43, 33, 175);
+  box-shadow: 4px 4px 8px 0px #03e9f4;
 }
 
 .btn {
@@ -41,13 +41,14 @@
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   text-transform: uppercase;
   font-size: 18px;
-  background-color: rgb(203, 207, 207);
+  font-weight: bold;
+  background-color: #141e30;
   cursor: pointer;
   color: rgb(86, 173, 173);
 }
 
 .btn:hover {
-  box-shadow: 4px 4px 8px 0px rgb(43, 33, 175);
+  box-shadow: 4px 4px 8px 0px #03e9f4;
 }
 
 .title {
