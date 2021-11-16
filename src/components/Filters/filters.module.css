@@ -1,7 +1,7 @@
 .label {
   display: block;
   width: 400px;
-  margin: 50px auto 0;
+  margin: 20px auto 0;
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -15,7 +15,7 @@
   width: 400px;
   line-height: 40px;
   padding: 0 0 0 15px;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
   font-family: 'Roboto', sans-serif;
 
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
