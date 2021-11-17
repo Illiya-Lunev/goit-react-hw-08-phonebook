@@ -66,7 +66,7 @@ export default function App() {
           >
             <Route path="/login" element={<LoginView />} />
           </Route>
-          <Route path="/contacts" element={<PrivateRoute redirectTo="/" />}>
+          <Route element={<PrivateRoute path="/contacts" redirectTo="/" />}>
             <Route path="/contacts" element={<ContactView />} />
           </Route>
         </Routes>
