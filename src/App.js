@@ -8,6 +8,7 @@ import authSelectors from './redux/Auth/auth-selectors';
 import { fetchCurrentUser } from './redux/Auth/auth-operations';
 import PublicRoute from './components/PublicRoute/PublicRoute.js';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
+import './app.css';
 
 const HomeView = lazy(() =>
   import('./Views/HomeView' /* webpackChunkName: "home-page" */),
