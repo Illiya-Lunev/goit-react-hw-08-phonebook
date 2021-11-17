@@ -38,7 +38,7 @@ export default function LoginView() {
             name="email"
             value={email}
             onChange={handleChange}
-            required=""
+            required
           />
           <label className={s.user_box_label}> Email</label>
         </div>
@@ -49,7 +49,7 @@ export default function LoginView() {
             name="password"
             value={password}
             onChange={handleChange}
-            required=""
+            required
           />
           <label className={s.user_box_label}>Password </label>
         </div>
