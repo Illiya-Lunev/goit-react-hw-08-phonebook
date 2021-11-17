@@ -1,5 +1,5 @@
 import { useEffect, lazy, Suspense } from 'react';
-import { Switch } from 'react-router';
+import { Route, Routes } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from 'react-loader-spinner';
 import AppBar from './components/AppBar/AppBar.js';
@@ -50,20 +50,26 @@ export default function App() {
           />
         }
       >
-        <Switch>
-          <PublicRoute exact path="/">
-            <HomeView />
-          </PublicRoute>
-          <PublicRoute exact path="/register" redirectTo="/contacts" restricted>
-            <RegisterView />
-          </PublicRoute>
-          <PublicRoute exact path="/login" redirectTo="/contacts" restricted>
-            <LoginView />
-          </PublicRoute>
-          <PrivateRoute>
-            <ContactView path="/contacts" redirectTo="/login" />
-          </PrivateRoute>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<PublicRoute />}>
+            <Route path="/" element={<HomeView />} />
+          </Route>
+          <Route
+            path="/register"
+            element={<PublicRoute restricted redirectTo="/contacts" />}
+          >
+            <Route path="/register" element={<RegisterView />} />
+          </Route>
+          <Route
+            path="/login"
+            element={<PublicRoute redirectTo="/contacts" restricted />}
+          >
+            <Route path="/login" element={<LoginView />} />
+          </Route>
+          <Route path="/contacts" element={<PrivateRoute redirectTo="/" />}>
+            <Route path="/contacts" element={<ContactView />} />
+          </Route>
+        </Routes>
       </Suspense>
     </div>
   ) : null;
