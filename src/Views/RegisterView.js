@@ -49,7 +49,7 @@ export default function RegisterView() {
             name="name"
             value={name}
             onChange={handleChange}
-            required
+            required=""
           />
           <label className={s.user_box_label}>Name</label>
         </div>
@@ -60,7 +60,7 @@ export default function RegisterView() {
             name="email"
             value={email}
             onChange={handleChange}
-            required
+            required=""
           />
           <label className={s.user_box_label}>Email</label>
         </div>
@@ -71,7 +71,7 @@ export default function RegisterView() {
             name="password"
             value={password}
             onChange={handleChange}
-            required
+            required=""
           />
           <label className={s.user_box_label}>Password </label>
         </div>
